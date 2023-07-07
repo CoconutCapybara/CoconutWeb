@@ -1,18 +1,30 @@
 body {
-  background-color: #000000;
+  background-color: #4b3220;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
+#buttons {
+  padding-inline: 20px;
+}
+
+#centertextarea {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:#b4784b;
+  color: #fff
+}
 .container {
   max-width: 600px;
   margin: 50px auto;
-  background-color: #000000;
+  background-color: #6d492e;
   border: 2px;
-  border-color: #292929;
+  border-color: #966541;
   border-style: solid;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .profile img {
@@ -20,8 +32,8 @@ body {
   width: 150px;
   height: auto;
   display: block;
-  border: 5px;
-  border-color: #292929;
+  border: 2px;
+  border-color: #ffffff;
   border-style: solid;
   margin: 0 auto 20px;
 }
