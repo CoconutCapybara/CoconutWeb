@@ -1,5 +1,4 @@
 body {
-  cursor: url(arrow.png), auto;
   background-color: #4b3220;
   font-family: Arial, sans-serif;
   margin: 0;
@@ -29,18 +28,18 @@ img {
   border-color: #966541;
   border-style: solid;
   padding-top: 20px;
-  padding-bottom: 20px;
+}
+
+.centeradvertisement {
+  text-align: center;
 }
 
 .profile img {
-  font-family: 'Windows';
-  width: 150px;
-  height: auto;
-  display: block;
-  border: 2px;
-  border-color: #ffffff;
-  border-style: solid;
-  margin: 0 auto 20px;
+	font-family: 'Windows';
+	width: 450px;
+	height: auto;
+	display: block;
+	margin: 0 auto 20px;
 }
 
 .profile h2 {
