@@ -5,10 +5,6 @@ body {
   padding: 0;
 }
 
-img {
-  image-rendering: pixelated;
-}
-
 #buttons {
   padding-inline: 20px;
 }
@@ -17,17 +13,16 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  background-color:#b4784b;
+  background-color:#4b3220;
   color: #fff
 }
 .container {
-  max-width: 600px;
+  max-width: 800px;
   margin: 20px auto;
   background-color: #6d492e;
   border: 2px;
   border-color: #966541;
   border-style: solid;
-  padding-top: 20px;
 }
 
 .centeradvertisement {
@@ -71,4 +66,10 @@ img {
     font-weight: normal;
     font-style: normal;
     font-display: swap;
+}
+.ads {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 550px;
 }
