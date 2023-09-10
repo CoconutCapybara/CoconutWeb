@@ -1,49 +1,126 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>CoconutCapybara</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/x-icon" href="coconut.ico">
-  <meta property="og:title" content="toasted.fun" />
-  <meta property="og:type" content="coconut" />
-  <meta property="og:url" content="https://toasted.fun" />
-  <meta property="og:image" content="/images/pfp_large.png" />
-  <meta property="og:description" content="coconut" />
-  <meta name="theme-color" content="#b4784b">
-</head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="coconut.ico">
+    <meta property="og:title" content="toasted.fun" />
+    <meta property="og:type" content="coconut" />
+    <meta property="og:url" content="https://toasted.fun" />
+    <meta property="og:image" content="/images/pfp_large.png" />
+    <meta property="og:description" content="coconut" />
+    <meta name="theme-color" content="#b4784b">
+    <title>‌‌‌</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #372417;
+            margin: 0;
+            display: grid;
+            align-items: start;
+            justify-content: center;
+            justify-items: center;
+        }
 
+        .profile-container {
+            text-align: center;
+            background-color: #573b27;
+            padding: 1%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 3%;
+            margin-top: 3%;
+            border-radius: 10px;
+        }
+
+        .other-container {
+            text-align: center;
+            background-color: #573b27;
+            padding: 1%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1%;
+            margin-top: 1%;
+            border-radius: 10px;
+        }
+
+        .profile-picture {
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 5%; /* Adjust the percentage as needed */
+        }
+
+        .profile-picture-full {
+            height: auto; /* Maintain aspect ratio */
+            overflow: hidden;
+            margin: 0 auto 0%; /* Adjust the percentage as needed */
+        }
+
+        .profile-name {
+            font-size: 4vw; /* Responsive font size based on viewport width */
+            color: white;
+        }
+
+        .logo {
+            text-align: center;
+            image-rendering: pixelated;
+            min-width: 100%;
+        }
+        .button {
+            text-align: center;
+            min-width: 100%;
+            max-width: 10%;
+            border-radius: 10px;
+        }
+
+        /* Media Query for smaller screens */
+        @media (min-width: 0px) {
+            .profile-picture,
+            .profile-picture-full,
+            .profile-container,
+            .other-container,
+            .logo {
+                width: 90%;
+            }
+        }
+        @media (min-width: 350px) {
+            .profile-picture,
+            .profile-picture-full,
+            .profile-container,
+            .other-container,
+            .logo {
+                width: 70%;
+            }
+        }
+        @media (min-width: 500px) {
+            .profile-picture,
+            .profile-picture-full,
+            .profile-container,
+            .other-container,
+            .logo {
+                width: 55%;
+            }
+        }
+        @media (min-width: 1170px) {
+            .profile-picture,
+            .profile-picture-full,
+            .profile-container,
+            .other-container,
+            .logo {
+                width: 40%;
+            }
+        }
+    </style>
+</head>
 <body>
-  <div class="container">
-    <div class="profile">
-      <a href="https://toasted.fun"><img src="images/transparent.png", style="image-rendering: pixelated;max-width: 905px;margin: auto;margin-top: 15px;margin-bottom: 15px;min-width: 650px;" alt="Logo"></a>
+    <div class="profile-container">
+            <img class="logo" src="logo_downscaled.png" alt="Profile Picture">
     </div>
-  </div>
-    <div class="container">
-        <div class="description">
-          <p>
-            <a href="https://discord.com/invite/7gG3N63gnh" target="_blank"><img src="/images/DiscordPromotional.png", style="max-width: 760px;border-radius: 10px;"></a>
-          </p>
-        </div>
-      </div>
-      <div class="container">
-        <div class="description">
-          <p>
-            <a href="https://ko-fi.com/coconutcapybara" target="_blank"><img src="/images/KofiPromotional.png", style="max-width: 760px;border-radius: 10px;"></a>
-          </p>
-        </div>
-      </div>
-      <div class="container">
-        <div class="description">
-          <p>
-            <img src="/images/ButtonPromotional.png", style="max-width: 760px;border-radius: 10px;">
-            <textarea style="border-radius: 10px;overflow:hidden;resize:none;margin-bottom: 20px;width: 755px;height: 50px;" id="centertextarea"><a href=https://toasted.fun><img src="https://toasted.fun/buttons/coconut.gif"></a></textarea>
-          </p>
-        </div>
-      </div>
+    <div class="other-container">
+        <a href="https://discord.com/invite/7gG3N63gnh" target="_blank"><img class="button" src="DiscordPromotional.png"></a>
     </div>
-  </div>
+    <div class="other-container">
+        <a href="https://ko-fi.com/coconutcapybara" target="_blank"><img class="button" src="KofiPromotional.png"></a>
+    </div>
 </body>
 </html>

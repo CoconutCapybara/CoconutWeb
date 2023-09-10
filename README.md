@@ -1,2 +1,0 @@
-# CoconutWeb
-website yay
