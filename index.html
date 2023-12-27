@@ -1,126 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" type="image/x-icon" href="coconut.ico">
-    <meta property="og:title" content="toasted.fun" />
-    <meta property="og:type" content="coconut" />
-    <meta property="og:url" content="https://toasted.fun" />
-    <meta property="og:image" content="/images/pfp_large.png" />
-    <meta property="og:description" content="coconut" />
-    <meta name="theme-color" content="#b4784b">
-    <title>‌‌‌</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #372417;
-            margin: 0;
-            display: grid;
-            align-items: start;
-            justify-content: center;
-            justify-items: center;
-        }
+<meta charset="UTF-8">
+<title>work in progress</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 
-        .profile-container {
-            text-align: center;
-            background-color: #573b27;
-            padding: 1%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            margin-bottom: 3%;
-            margin-top: 3%;
-            border-radius: 10px;
-        }
+<meta name="generator" content="Scirra Construct">
 
-        .other-container {
-            text-align: center;
-            background-color: #573b27;
-            padding: 1%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            margin-bottom: 1%;
-            margin-top: 1%;
-            border-radius: 10px;
-        }
+	<link rel="manifest" href="appmanifest.json">
+	<link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png">
+	<link rel="apple-touch-icon" sizes="256x256" href="icons/icon-256.png">
+	<link rel="icon" type="image/png" href="icons/icon-256.png">
 
-        .profile-picture {
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 5%; /* Adjust the percentage as needed */
-        }
+<link rel="stylesheet" href="style.css">
 
-        .profile-picture-full {
-            height: auto; /* Maintain aspect ratio */
-            overflow: hidden;
-            margin: 0 auto 0%; /* Adjust the percentage as needed */
-        }
 
-        .profile-name {
-            font-size: 4vw; /* Responsive font size based on viewport width */
-            color: white;
-        }
-
-        .logo {
-            text-align: center;
-            image-rendering: pixelated;
-            min-width: 100%;
-        }
-        .button {
-            text-align: center;
-            min-width: 100%;
-            max-width: 10%;
-            border-radius: 10px;
-        }
-
-        /* Media Query for smaller screens */
-        @media (min-width: 0px) {
-            .profile-picture,
-            .profile-picture-full,
-            .profile-container,
-            .other-container,
-            .logo {
-                width: 90%;
-            }
-        }
-        @media (min-width: 350px) {
-            .profile-picture,
-            .profile-picture-full,
-            .profile-container,
-            .other-container,
-            .logo {
-                width: 70%;
-            }
-        }
-        @media (min-width: 500px) {
-            .profile-picture,
-            .profile-picture-full,
-            .profile-container,
-            .other-container,
-            .logo {
-                width: 55%;
-            }
-        }
-        @media (min-width: 1170px) {
-            .profile-picture,
-            .profile-picture-full,
-            .profile-container,
-            .other-container,
-            .logo {
-                width: 40%;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="profile-container">
-            <img class="logo" src="logo_downscaled.png" alt="Profile Picture">
-    </div>
-    <div class="other-container">
-        <a href="https://discord.com/invite/7gG3N63gnh" target="_blank"><img class="button" src="DiscordPromotional.png"></a>
-    </div>
-    <div class="other-container">
-        <a href="https://ko-fi.com/coconutcapybara" target="_blank"><img class="button" src="KofiPromotional.png"></a>
-    </div>
+
+<script>
+if (location.protocol.substr(0, 4) === "file")
+{
+	alert("Web exports won't work until you upload them. (When running on the file: protocol, browsers block many features from working for security reasons.)");
+}
+</script>
+
+	<noscript>
+		<div id="notSupportedWrap">
+			<h2 id="notSupportedTitle">This content requires JavaScript</h2>
+			<p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
+		</div>
+	</noscript>
+	<script src="scripts/supportcheck.js"></script>
+	<script src="scripts/main.js" type="module"></script>
+
+
 </body>
 </html>
