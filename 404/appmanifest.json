@@ -1,0 +1,10 @@
+{
+	"name": "Error 404",
+	"short_name": "Error 404",
+	"description": "",
+	"start_url": "index.html",
+	"display": "fullscreen",
+	"orientation": "landscape",
+	"background_color": "#ffffff",
+	"icons": []
+}
