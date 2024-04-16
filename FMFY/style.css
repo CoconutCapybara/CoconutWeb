@@ -1,0 +1,131 @@
+/* Reset some default browser styles */
+body, html {
+    font-family: OakSans-Medium;
+    background-color: #1d1d1d;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+@font-face {
+    font-family: OakSans-Medium;
+    src: url(OakSans-Medium.woff2);
+}
+
+@font-face {
+    font-family: OakSans-Regular;
+    src: url(OakSans-Regular.woff2);
+}
+
+header {
+    font-family: OakSans-Medium;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px; /* Reduce padding on top and bottom */
+    text-align: center;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    width: 100vw; /* Set width to 100% of the viewport width */
+    position: fixed; /* Set header to fixed position */
+    top: 0; /* Align header to the top of the screen */
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+header h1 {
+    font-family: OakSans-Medium;
+    font-size: 72px; /* Increase font size */
+    transition: font-size 1s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; /* Add transition for font size, transform, box shadow, color, and text shadow */
+    position: relative; /* Add relative positioning */
+    z-index: 1; /* Ensure header text is above other elements */
+    color: #fff; /* Set initial color */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0); /* Initial text shadow */
+}
+
+header h1:before {
+    font-family: OakSans-Medium;
+    content: ""; /* Add content for pseudo-element */
+    position: absolute; /* Set position to absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #7f69a3, #b780b8); /* Add background gradient */
+    opacity: 0; /* Initially hide the gradient */
+    transition: opacity 1s ease; /* Add transition for opacity */
+    z-index: -1; /* Move the gradient behind the text */
+}
+
+header h1:hover {
+    font-family: OakSans-Medium;
+    font-size: 84px; /* Increase font size on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Add shadow on hover */
+    transform: translateY(-5px); /* Move text slightly up on hover */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Add glowing effect on hover */
+}
+
+header h1:hover:before {
+    font-family: OakSans-Medium;
+    opacity: 1; /* Show the gradient on hover */
+}
+
+main {
+    padding: 20px;
+    max-width: 600px;
+}
+
+section {
+    font-family: OakSans-Regular;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px; /* Add margin at the bottom */
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    max-width: 900px; /* Set the maximum width of the section */
+    padding: 20px; /* Adjust padding as needed */
+}
+
+footer {
+    font-family: OakSans-Medium;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glowing effect on hover */
+}
+
+/* Button Styles */
+button {
+    font-family: OakSans-Regular;
+    padding: 20px 40px; /* Increase padding */
+    margin: 10px; /* Add margin for spacing */
+    border: none;
+    border-radius: 40px; /* Increase border radius */
+    font-size: 20px; /* Increase font size */
+    color: #fff;
+    background-image: linear-gradient(to right, #865DC6, #C55DC6);
+    transition: background-color 0.5s ease, filter 0.5s ease, transform 0.5s ease, padding 1s ease; /* Increase transition duration and add padding */
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(1.2);
+    transform: scale(1.1); /* Grow button size on hover */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Add glowing effect to button text on hover */
+    transition: text-shadow 0.5s ease, transform 0.5s ease; /* Add transition for text-shadow and transform */
+}
+
+.censored {
+    background-color: black;
+    color: black;
+    padding: 0 5px;
+    border-radius: 3px;
+}
+
