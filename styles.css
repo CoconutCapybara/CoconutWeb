@@ -1,0 +1,103 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #3a2a2d, #191314);
+    color: white; /* White text color */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+}
+
+.profile-window {
+    border: 4px solid rgba(255, 255, 255, 0.096); /* White outline */
+    background-color: rgba(114, 114, 114, 0.23); /* Semi-transparent background */
+    border-radius: 30px; /* Increased border radius */
+    padding: 50px; /* Increased padding for more space */
+    box-shadow: 0px 0px 30px rgba(85, 85, 85, 0.5); /* Increased shadow */
+    width: 650px; /* Increased width */
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 200px; /* Larger profile picture */
+    height: 200px; /* Larger profile picture */
+    border-radius: 50%;
+    margin-right: 30px; /* Increased margin-right for spacing */
+    border: 6px solid #e6c9cfab; /* Add circular border */
+    box-sizing: border-box; /* Include border in element's dimensions */
+}
+
+.profile-details {
+    flex-grow: 1;
+}
+
+.profile-name {
+    font-family: OakSans-Medium;
+    margin: 0;
+    font-size: 55px; /* Increased font size */
+    display: inline-block; /* Display as inline-block */
+}
+
+.bio {
+    font-family: OakSans-Regular;
+    margin-top: 10px; /* Increased margin-top */
+    font-size: 32px; /* Increased font size */
+}
+
+.button-container {
+    margin-top: 55px; /* Increased margin-top */
+    text-align: center;
+}
+
+.button {
+    text-decoration: none; /* Remove underline */
+    font-family: OakSans-Medium;
+    padding: 15px 30px; /* Increased padding */
+    margin: 0 10px;
+    border: 4px solid rgba(255, 255, 255, 0.432); /* White outline */
+    border-radius: 5px;
+    background-color: #72727269;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 34px;
+    transition: filter 0.3s ease; /* Smooth transition for the filter property */
+}
+
+.button:hover {
+    text-decoration: none; /* Remove underline */
+    filter: brightness(1.2); /* Increase brightness on hover */
+}
+
+.button a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit button text color */
+}
+
+.pronouns-tag {
+    background-color: rgba(255, 255, 255, 0.2); /* Light gray semitransparent background */
+    color: white; /* White text color */
+    padding: 6px 12px; /* Adjust padding for a larger tag */
+    border-radius: 20px; /* Rounded corners */
+    font-size: 18px; /* Larger font size */
+    margin-left: 10px; /* Adjust spacing from the name */
+    border: 4px solid rgba(255, 255, 255, 0.432); /* White outline */
+    margin-top: -8px; /* Move the tag up a bit */
+    white-space: nowrap; /* Prevent text from wrapping */
+    display: inline-block; /* Display as inline-block */
+}
+
+@font-face {
+    font-family: OakSans-Medium;
+    src: url(OakSans-Medium.woff2);
+}
+
+@font-face {
+    font-family: OakSans-Regular;
+    src: url(OakSans-Regular.woff2);
+}
