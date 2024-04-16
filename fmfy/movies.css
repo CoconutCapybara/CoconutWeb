@@ -1,257 +1,114 @@
-/* Reset some default browser styles */
-body, html {
-    font-family: OakSans-Regular, sans-serif;
-    background-color: #1d1d1d;
+:root {
+    font-size: 20px;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  
+  p {
     margin: 0;
-    padding: 0;
-    height: 100%;
+  }
+  
+  p:not(:last-child) {
+    margin-bottom: 1.5em;
+  }
+  
+  body {
+    font: 1em/1.618 Inter, sans-serif;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column; /* Stack elements vertically */
-}
-
-@font-face {
+    justify-content: center;
+    min-height: 100vh;
+    padding: 30px;
+    margin: 0;
+    color: #224;
+    background: url('pirate.jpg') center / cover no-repeat fixed;
+  }
+  
+  .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    margin: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* Add drop shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition */
+  }
+  
+  .circle:hover {
+    transform: scale(1.05); /* Grow slightly bigger on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Larger drop shadow on hover */
+  }
+  
+  .circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .circle-container {
+    text-align: center;
+  }
+  
+  .card {
+    max-width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(5px);
+  }
+  
+  .card-header {
+    font-family: OakSans-Medium, sans-serif;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .card-footer {
+    font-size: 0.65em;
+    color: #446;
+  }
+  
+  /* Hover effects for specific circles */
+  .circle:nth-child(1):hover .card-header {
+    content: "Braflix";
+  }
+  
+  .circle:nth-child(2):hover .card-header {
+    content: "Movie Web";
+  }
+  
+  .circle:nth-child(3):hover .card-header {
+    content: "SUSFLIX";
+  }
+  
+  .circle:nth-child(4):hover .card-header {
+    content: "Streamflix";
+  }
+  
+  .circle:nth-child(5):hover .card-header {
+    content: "N/A";
+  }
+  
+  @font-face {
     font-family: OakSans-Medium;
     src: url(OakSans-Medium.woff2);
-}
-
-@font-face {
+  }
+  
+  @font-face {
     font-family: OakSans-Regular;
     src: url(OakSans-Regular.woff2);
-}
-
-header a {
-    text-decoration: none; /* Remove underline */
-}
-
-header {
-    font-family: OakSans-Medium;
-    background-color: rgba(51, 51, 51, 0.363); /* Semi-transparent background color */
-    color: #fff;
-    padding: 10px 20px; /* Reduce padding on top and bottom */
-    text-align: center;
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    width: 100vw; /* Set width to 100% of the viewport width */
-    position: fixed; /* Set header to fixed position */
-    top: 0; /* Align header to the top of the screen */
-    z-index: 1000; /* Ensure header is above other content */
-    backdrop-filter: blur(20px); /* Apply blur effect to the background */
-}
-
-header h1 {
-    font-family: OakSans-Medium;
-    font-size: 72px; /* Increase font size */
-    transition: font-size 1s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; /* Add transition for font size, transform, box shadow, color, and text shadow */
-    position: relative; /* Add relative positioning */
-    z-index: 1; /* Ensure header text is above other elements */
-    color: #fff; /* Set initial color */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0); /* Initial text shadow */
-}
-
-header h1:before {
-    font-family: OakSans-Medium;
-    content: ""; /* Add content for pseudo-element */
-    position: absolute; /* Set position to absolute */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to right, #7f69a3, #b780b8); /* Add background gradient */
-    opacity: 0; /* Initially hide the gradient */
-    transition: opacity 1s ease; /* Add transition for opacity */
-    z-index: -1; /* Move the gradient behind the text */
-}
-
-header h1:hover {
-    font-family: OakSans-Medium;
-    font-size: 84px; /* Increase font size on hover */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Add shadow on hover */
-    transform: translateY(-5px); /* Move text slightly up on hover */
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Add glowing effect on hover */
-}
-
-header h1:hover:before {
-    font-family: OakSans-Medium;
-    opacity: 1; /* Show the gradient on hover */
-}
-
-header .search-container {
-    position: relative;
-    display: inline-block;
-    width: 280px; /* Adjust the width as needed */
-}
-
-header input[type="text"] {
-    padding: 10px 10px 10px 35px; /* Adjust padding to accommodate the search icon */
-    margin: 10px auto; /* Center the search bar horizontally */
-    border-radius: 25px; /* Round corners */
-    border: 3px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white outline with increased thickness */
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
-    color: #fff;
-    display: block;
-    width: calc(100% - 45px); /* Adjust the width to leave space for the icon */
-}
-
-header input[type="text"]::placeholder {
-    color: rgba(255, 255, 255, 0.7); /* Placeholder color */
-}
-
-.search-icon {
-    position: absolute;
-    top: 50%;
-    left: 10px; /* Adjust to center the icon vertically */
-    transform: translateY(-50%);
-    width: 24px; /* Adjust width to fit the search bar */
-    height: 24px; /* Adjust height to fit the search bar */
-    cursor: pointer; /* Add pointer cursor */
-}
-
-/* Panel styles */
-main {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px 0;
-    margin-top: 100px; /* Adjust the margin-top to the height of your header */
-    overflow-y: auto; /* Enable vertical scrolling */
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap; /* Allow panels to wrap to the next line */
-    justify-content: space-around;
-    overflow-y: auto; /* Make the container vertically scrollable */
-}
-
-.panel {
-    width: 320px;
-    height: 520px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Added transition for filter property */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    filter: brightness(0.7);
-}
-
-.panel:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    filter: brightness(1);
-}
-
-.panel-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); /* Smooth gradient from bottom to top */
-    color: #fff;
-    box-sizing: border-box;
-    border-radius: 0 0 10px 10px;
-}
-
-.panel-content h2,
-.panel-content p {
-    margin: 0;
-    text-align: left;
-}
-
-.panel-content p {
-    margin-top: 5px;
-}
-
-/* Media query for smaller viewport sizes */
-@media screen and (max-width: 768px) {
-    .panel {
-        width: 280px; /* Adjust width for smaller screens */
-        height: 460px; /* Adjust height for smaller screens */
-        /* other styles */
-    }
-}
-
-/* Media query for even smaller viewport sizes */
-@media screen and (max-width: 480px) {
-    .panel {
-        width: 240px; /* Adjust width for even smaller screens */
-        height: 400px; /* Adjust height for even smaller screens */
-        /* other styles */
-    }
-}
-
-.tag {
-    background-color: rgba(50, 50, 50, 0.7); /* Dark gray transparent background */
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 20px;
-    margin-right: 5px;
-    display: inline-block; /* Display tags inline */
-    margin-bottom: 5px; /* Add space between tags */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Slight white outline */
-}
-
-.panel-tags {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-
-/* Button Styles */
-button {
-    font-family: OakSans-Regular;
-    padding: 20px 40px; /* Increase padding */
-    margin: 10px; /* Add margin for spacing */
-    border: none;
-    border-radius: 40px; /* Increase border radius */
-    font-size: 20px; /* Increase font size */
-    color: #fff;
-    background-image: linear-gradient(to right, #865DC6, #C55DC6);
-    transition: background-color 0.5s ease, filter 0.5s ease, transform 0.5s ease, padding 0.5s ease; /* Increase transition duration and add padding */
-    cursor: pointer;
-}
-
-button:hover {
-    filter: brightness(1.2);
-    transform: scale(1.1); /* Grow button size on hover */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Add glowing effect to button text on hover */
-    transition: text-shadow 0.5s ease, transform 0.5s ease; /* Add transition for text-shadow and transform */
-}
-
-/* Scrollbar styles */
-::-webkit-scrollbar {
-    width: 10px; /* Width of the scrollbar */
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.5); /* Dark background for the scrollbar track */
-    backdrop-filter: blur(10px); /* Apply blur effect to the background */
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white for the scrollbar handle */
-    backdrop-filter: blur(10px); /* Apply blur effect to the background */
-    border-radius: 10px; /* Round the edges of the scrollbar handle */
-}
-
-
-/* Footer styles */
-footer {
-    font-family: OakSans-Medium;
-    background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background color */
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glowing effect on hover */
-    backdrop-filter: blur(10px); /* Apply blur effect to the background */
-}
+  }
+  

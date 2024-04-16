@@ -2,88 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Free Media, F*** Yeah!" property="og:title" />
+    <meta content="Inspired by FMHY." property="og:description" />
+    <meta content="https://toasted.fun/fmfy/movies/" property="og:url" />
+    <meta content="#9cb7cc" data-react-helmet="true" name="theme-color" />
     <title>FMFY</title>
-    <link rel="stylesheet" href="movies.css"> <!-- Assuming your CSS file is named "movies.css" -->
+    <link rel="stylesheet" href="movies.css">
+    <style>
+        .circle.outlined {
+            outline: 2px solid white;
+        }
+        
+        .fade-out-text {
+            color: white;
+            text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: OakSans-Medium, sans-serif;
+            font-size: 1em;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .fade-out-text.fade-out {
+            opacity: 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <a href="https://toasted.fun/fmfy/index.html">
-            <h1>FMFY</h1>
-        </a>
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search by title or tag...">
-            <img src="search-icon.png" alt="Search Icon" class="search-icon">
+  <div class="card">
+    <div class="card-header">FMFY</div>
+    <div class="circle-container">
+        <div class="circle" onclick="toggleOutline(this, 'Braflix', 'https://www.braflix.video/')">
+          <img src="Braflix2.jpg" alt="Circle 1">
         </div>
-    </header>     
+        <div class="circle" onclick="toggleOutline(this, 'movie-web', 'https://watch.qtchaos.de/')">
+          <img src="MovieWeb2.jpg" alt="Circle 2">
+        </div>
+        <div class="circle" onclick="toggleOutline(this, 'SUSFLIX', 'https://susflix.tv/')">
+          <img src="susflix2.jpg" alt="Circle 3">
+        </div>
+        <div class="circle" onclick="toggleOutline(this, 'StreamFlix', 'https://watch.streamflix.one/')">
+          <img src="SteamFlix2.jpg" alt="Circle 4">
+        </div>
+        <div class="circle" onclick="toggleOutline(this, 'N/A', 'https://toasted.fun/fmfy/movies')">
+          <img src="Unavailable2.jpg" alt="Circle 5">
+        </div>
+    </div>
+  </div>  
 
-    <main  class="container">
-        <section class="panel panel1" style="background-image: url('Braflix.jpg');">
-            <div class="panel-tags">
-                <span class="tag">Account</span>
-                <span class="tag">4K</span>
-                <span class="tag">1080p</span>
-                <span class="tag">Movies</span>
-                <span class="tag">Anime</span>
-                <span class="tag">TV</span>
-            </div>
-            <a href="https://www.braflix.video/" target="_blank" class="panel-link"> <!-- Added anchor tag with href attribute -->
-                <div class="panel-content">
-                    <h2>Braflix</h2>
-                    <p>Web app for watching movies easily.</p>
-                </div>
-            </a>
-        </section>
-        
-        <section class="panel panel1" style="background-image: url('MovieWeb.jpg');">
-            <div class="panel-tags">
-                <span class="tag">Account</span>
-                <span class="tag">1080p</span>
-                <span class="tag">Movies</span>
-                <span class="tag">Anime</span>
-                <span class="tag">TV</span>
-            </div>
-            <a href="https://movie-web.github.io/docs/instances" target="_blank" class="panel-link"> <!-- Added anchor tag with href attribute -->
-                <div class="panel-content">
-                    <h2>movie-web</h2>
-                    <p>Web app for watching movies easily.</p>
-                </div>
-            </a>
-        </section>
-        
-        <section class="panel panel1" style="background-image: url('susflix.jpg');">
-            <div class="panel-tags">
-                <span class="tag">Account</span>
-                <span class="tag">4K</span>
-                <span class="tag">1080p</span>
-                <span class="tag">Movies</span>
-                <span class="tag">Anime</span>
-                <span class="tag">TV</span>
-            </div>
-            <a href="https://susflix.tv/" target="_blank" class="panel-link"> <!-- Added anchor tag with href attribute -->
-                <div class="panel-content">
-                    <h2>SUSFLIX</h2>
-                    <p>Web app very similar to netflix.</p>
-                </div>
-            </a>
-        </section>
+  <div class="fade-out-text">Double click to open.</div>
 
-        <section class="panel panel1" style="background-image: url('Unavailable.jpg');">
-            <div class="panel-tags">
-            </div>
-            <a href="https://toasted.fun/fmfy/index.html" target="_blank" class="panel-link"> <!-- Added anchor tag with href attribute -->
-                <div class="panel-content">
-                    <h2>Unavailable</h2>
-                    <p>Check back later.</p>
-                </div>
-            </a>
-        </section> 
-    </main>
+  <script>
+    let outlinedCircle = null;
 
-    <footer>
-        <p>&copy; 2024 CoconutCapybara</p>
-    </footer>
+    function toggleOutline(circle, text, url) {
+        if (outlinedCircle === circle) {
+            // If the same circle is clicked again, redirect to the specified URL
+            window.open(url, '_blank');
+            return;
+        }
 
-    <script src="script.js"></script>
+        // Remove outline from previously outlined circle if exists
+        if (outlinedCircle) {
+            outlinedCircle.classList.remove('outlined');
+        }
+
+        // Add outline to the clicked circle
+        circle.classList.add('outlined');
+        outlinedCircle = circle;
+
+        // Update the text in the card-header
+        document.querySelector('.card-header').textContent = text;
+    }
+
+    // Fading away the text after 5 seconds
+    setTimeout(function() {
+        document.querySelector('.fade-out-text').classList.add('fade-out');
+    }, 5000);
+  </script>
 </body>
 </html>
