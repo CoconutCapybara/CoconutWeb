@@ -1,28 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="toasted.fun" property="og:title" />
-    <meta content="awesome website" property="og:description" />
-    <meta content="https://toasted.fun/" property="og:url" />
-    <meta content="https://toasted.fun/1024_logo.png" property="og:image" />
-    <meta content="#f7dbe1" data-react-helmet="true" name="theme-color" />
-    <title>toasted.fun</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coconuts</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="profile-window">
-        <div class="profile-info">
-            <img src="1024_logo.png" alt="Profile Picture" class="profile-picture">
-            <div class="profile-details">
-                <h1 class="profile-name">Coconut <span class="pronouns-tag">Any Pronouns</span></h1>
-                <p class="bio">Hello! my name is Ivy, I go by Coconut online.</p>
-            </div>
+  <div class="container">
+    <div class="card">
+      <div class="profile-info">
+        <div class="profile-picture">
+          <img src="images/1024_logo.png" alt="Profile Picture">
         </div>
-        <div class="button-container">
-            <a href="https://discord.com/invite/9vMpEkTBs3" target="_blank" class="button">Discord Server</a>
+        <div class="text-info">
+          <div class="name">
+            <h1>Coconut</h1>
+          </div>
+          <div class="description">
+            <p>Hello world, I'm a coconut.</p>
+          </div>
+          <div class="social-links">
+            <a href="screenshots.html">ChilloutVR Screenshots</a>
+            <a href="#" id="discord-link">Discord</a>
+          </div>
         </div>
+      </div>
     </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const discordLink = document.getElementById('discord-link');
+    
+      discordLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the link from navigating to another page
+    
+        // Text to copy to clipboard
+        const textToCopy = 'coconut.capybara';
+    
+        // Create a temporary input element
+        const tempInput = document.createElement('input');
+        tempInput.value = textToCopy;
+        document.body.appendChild(tempInput);
+    
+        // Select the text in the input
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999); // For mobile devices
+    
+        // Copy the text to clipboard
+        document.execCommand('copy');
+    
+        // Remove the temporary input
+        document.body.removeChild(tempInput);
+    
+        // Optionally, you can provide visual feedback or alert the user
+        alert('Copied my discord : ' + textToCopy);
+      });
+    });
+    </script>
+    
 </body>
 </html>

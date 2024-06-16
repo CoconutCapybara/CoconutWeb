@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screenshots</title>
+    <link rel="stylesheet" href="screenshots.css">
+</head>
+<body>
+
+<h1>ChilloutVR Screenshots</h1>
+
+<div class="search-container">
+    <input type="text" class="search-box" placeholder="Search by name (e.g., Pancakes on a plate.)">
+</div>
+
+<div class="gallery-container">
+    <div class="gallery">
+        <a target="_blank" href="images/CVR/ChilloutVR-2024-06-11_17-47-17.734.png">
+            <img src="images/CVR/ChilloutVR-2024-06-11_17-47-17.734.png" alt="ChilloutVR Screenshot">
+        </a>
+        <div class="desc">Seagulls in a toilet.</div>
+        <div class="tags"><small>June 2024</small></div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="images/CVR/ChilloutVR-2024-06-11_17-41-52.341.png">
+             <img src="images/CVR/ChilloutVR-2024-06-11_17-41-52.341.png" alt="ChilloutVR Screenshot">
+        </a>
+        <div class="desc">Seagulls in a circle.</div>
+        <div class="tags"><small>June 2024</small></div>
+    </div>
+    
+
+    <div class="gallery">
+        <a target="_blank" href="images/CVR/ChilloutVR-2024-06-11_17-32-58.089.png">
+            <img src="images/CVR/ChilloutVR-2024-06-11_17-32-58.089.png" alt="ChilloutVR Screenshot">
+        </a>
+        <div class="desc">Seagulls on some bread.</div>
+        <div class="tags"><small>June 2024</small></div>
+    </div>
+    
+
+    <div class="gallery">
+        <a target="_blank" href="images/CVR/ChilloutVR-2024-06-09_22-34-38.100.png">
+            <img src="images/CVR/ChilloutVR-2024-06-09_22-34-38.100.png" alt="ChilloutVR Screenshot">
+        </a>
+        <div class="desc">R.I.P Mushroom.</div>
+        <div class="tags"><small>June 2024</small></div>
+    </div>
+    
+
+    <div class="gallery">
+        <a target="_blank" href="images/CVR/ChilloutVR-2024-05-26_18-40-58.571.png">
+            <img src="images/CVR/ChilloutVR-2024-05-26_18-40-58.571.png" alt="ChilloutVR Screenshot">
+        </a>
+        <div class="desc">Portal Radio</div>
+        <div class="tags"><small>June 2024</small></div>
+    </div>
+    
+
+    <div class="gallery">
+        <a target="_blank" href="images/CVR/ChilloutVR-2024-05-26_18-22-38.048.png">
+            <img src="images/CVR/ChilloutVR-2024-05-26_18-22-38.048.png" alt="ChilloutVR Screenshot">
+        </a>
+        <div class="desc">Kyle in the backrooms.</div>
+        <div class="tags"><small>June 2024</small></div>
+    </div>
+    
+
+    <div class="gallery">
+        <a target="_blank" href="images/CVR/ChilloutVR-2024-05-23_01-47-38.784.png">
+            <img src="images/CVR/ChilloutVR-2024-05-23_01-47-38.784.png" alt="ChilloutVR Screenshot">
+        </a>
+        <div class="desc">Peebs staring into the camera.</div>
+        <div class="tags"><small>May 2024</small></div>
+    </div>
+    
+</div>
+<script>
+    // JavaScript for filtering galleries with text highlighting and fade-out animation
+    function filterImages() {
+        var input, filter, gallery, galleries, desc, i, txtValue;
+        input = document.querySelector('.search-box');
+        filter = input.value.toUpperCase();
+        galleries = document.querySelectorAll('.gallery');
+
+        galleries.forEach(function(gallery) {
+            desc = gallery.querySelector('.desc');
+            txtValue = desc.textContent || desc.innerText;
+
+            // Highlight matching text
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                desc.innerHTML = txtValue.replace(new RegExp(filter, 'gi'), match => `<span class="highlight">${match}</span>`);
+                gallery.classList.remove('hidden'); // Show gallery item
+            } else {
+                desc.innerHTML = txtValue; // Restore original text if no match
+                gallery.classList.add('hidden'); // Hide gallery item with fade-out effect
+            }
+        });
+    }
+
+    // Add event listener to search box
+    document.querySelector('.search-box').addEventListener('input', filterImages); // Use 'input' for real-time filtering
+</script>
+
+</body>
+</html>

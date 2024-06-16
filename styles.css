@@ -1,103 +1,138 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(to bottom, #3a2a2d, #191314);
-    color: white; /* White text color */
-    backdrop-filter: blur(10px); /* Frosted glass effect */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+/* Reset some default browser styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.profile-window {
-    border: 4px solid rgba(255, 255, 255, 0.096); /* White outline */
-    background-color: rgba(114, 114, 114, 0.23); /* Semi-transparent background */
-    border-radius: 30px; /* Increased border radius */
-    padding: 50px; /* Increased padding for more space */
-    box-shadow: 0px 0px 30px rgba(85, 85, 85, 0.5); /* Increased shadow */
-    width: 650px; /* Increased width */
+body {
+  font-family: 'Lexend', sans-serif; /* Apply Google Font to entire body */
+  background: linear-gradient(to bottom right, #3A2A2D, #1A1214); /* Gradient background */
+  color: #fff; /* Light text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Prevent scrolling beyond viewport */
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack cards vertically */
+  padding: 0 1rem; /* Add padding to sides for better spacing */
+}
+
+.card {
+  background-color: rgba(15, 12, 12, 0.85);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 2em;
+  padding: 2rem; /* Increase padding for better spacing */
+  width: 100%;
+  max-width: 800px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem; /* Add margin between cards */
 }
 
 .profile-info {
-    display: flex;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .profile-picture {
-    width: 200px; /* Larger profile picture */
-    height: 200px; /* Larger profile picture */
-    border-radius: 50%;
-    margin-right: 30px; /* Increased margin-right for spacing */
-    border: 6px solid #e6c9cfab; /* Add circular border */
-    box-sizing: border-box; /* Include border in element's dimensions */
+  width: 180px; /* Increased profile picture size */
+  height: 180px; /* Increased profile picture size */
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
 }
 
-.profile-details {
-    flex-grow: 1;
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.profile-name {
-    font-family: OakSans-Medium;
-    margin: 0;
-    font-size: 55px; /* Increased font size */
-    display: inline-block; /* Display as inline-block */
+.text-info {
+  text-align: center;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 600px; /* Limit text width */
 }
 
-.bio {
-    font-family: OakSans-Regular;
-    margin-top: 10px; /* Increased margin-top */
-    font-size: 32px; /* Increased font size */
+.name h1 {
+  font-size: 2.5rem; /* Increased font size */
+  margin-bottom: 0.5rem;
 }
 
-.button-container {
-    margin-top: 55px; /* Increased margin-top */
-    text-align: center;
+.description p {
+  font-size: 1.4rem; /* Increased font size */
+  color: #ccc;
+  margin-bottom: 1rem;
 }
 
-.button {
-    text-decoration: none; /* Remove underline */
-    font-family: OakSans-Medium;
-    padding: 15px 30px; /* Increased padding */
-    margin: 0 10px;
-    border: 4px solid rgba(255, 255, 255, 0.432); /* White outline */
-    border-radius: 5px;
-    background-color: #72727269;
-    color: white;
-    cursor: pointer;
-    font-size: 24px;
-    border-radius: 34px;
-    transition: filter 0.3s ease; /* Smooth transition for the filter property */
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  width: 100%;
 }
 
-.button:hover {
-    text-decoration: none; /* Remove underline */
-    filter: brightness(1.2); /* Increase brightness on hover */
+.social-links a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #271b1e;
+  border: 2px solid #4f3137; /* Increase border thickness for better visibility */
+  padding: 0.7rem 1.5rem; /* Increased padding */
+  border-radius: 2em;
+  margin: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.button a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit button text color */
+.social-links a:hover {
+  background-color: #3d282e;
 }
 
-.pronouns-tag {
-    background-color: rgba(255, 255, 255, 0.2); /* Light gray semitransparent background */
-    color: white; /* White text color */
-    padding: 6px 12px; /* Adjust padding for a larger tag */
-    border-radius: 20px; /* Rounded corners */
-    font-size: 18px; /* Larger font size */
-    margin-left: 10px; /* Adjust spacing from the name */
-    border: 4px solid rgba(255, 255, 255, 0.432); /* White outline */
-    margin-top: -8px; /* Move the tag up a bit */
-    white-space: nowrap; /* Prevent text from wrapping */
-    display: inline-block; /* Display as inline-block */
-}
+/* Responsive Adjustments */
+@media only screen and (max-width: 600px) {
+  .card,
+  .large-card {
+    padding: 1rem;
+  }
 
-@font-face {
-    font-family: OakSans-Medium;
-    src: url(OakSans-Medium.woff2);
-}
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
 
-@font-face {
-    font-family: OakSans-Regular;
-    src: url(OakSans-Regular.woff2);
+  .name h1 {
+    font-size: 1.8rem;
+  }
+
+  .description p,
+  .text-wrapper p {
+    font-size: 1.2rem;
+  }
+
+  .social-links a {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    margin: 0.3rem;
+  }
+
+  .image-wrapper {
+    margin-right: 1rem;
+  }
 }
