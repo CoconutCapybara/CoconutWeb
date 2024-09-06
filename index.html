@@ -1,64 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coconuts</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <div class="card">
-      <div class="profile-info">
-        <div class="profile-picture">
-          <img src="images/1024_logo.png" alt="Profile Picture">
-        </div>
-        <div class="text-info">
-          <div class="name">
-            <h1>Coconut</h1>
-          </div>
-          <div class="description">
-            <p>Hello world, I'm a coconut.</p>
-          </div>
-          <div class="social-links">
-            <a href="screenshots.html">ChilloutVR Screenshots</a>
-            <a href="#" id="discord-link">Discord</a>
-          </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="HTML, CSS" />
+    <meta name="description" content="My personal webpage." />
+    <meta name="theme-color" content="#f6b5c3" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <title>Coconuts</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Lexend", Arial, sans-serif; /* Updated font family */
+        background-color: #121212;
+        color: #e0e0e0;
+      }
+
+      .profile-container,
+      .card-container,
+      .button-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        margin-right: 20px;
+        margin-left: 20px;
+      }
+
+      .profile {
+        max-width: 950px;
+        width: 100%;
+        background-color: #1e1e1e;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        margin: 20px 20px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .profile-picture {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-right: 20px;
+        display: block;
+        cursor: pointer;
+      }
+
+      .profile-text {
+        flex: 1;
+      }
+
+      .logo {
+        width: 188px;
+        height: 40px;
+        object-fit: contain;
+        image-rendering: pixelated;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .username {
+        display: none;
+      }
+
+      .profile p {
+        font-size: 1.2em;
+        margin: 0 0 10px;
+        color: #e0e0e0;
+      }
+
+      .profile-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .circle-btn {
+        background: linear-gradient(45deg, #333, #555);
+        color: #ffffff;
+        border: none;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5em;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .circle-btn:hover {
+        background: linear-gradient(45deg, #444, #666);
+      }
+
+      .card {
+        width: 300px;
+        background-color: #1e1e1e;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        margin: 20px;
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+      }
+
+      .card-content {
+        padding: 20px;
+      }
+
+      .card-content h3 {
+        font-size: 1.8em;
+        margin: 0 0 10px;
+        color: #ffffff;
+      }
+
+      .card-content p {
+        font-size: 1.2em;
+        color: #e0e0e0;
+        line-height: 1.5;
+        margin: 0 0 15px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #4c4c4c;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 20px;
+        transition: background-color 0.3s ease;
+        font-size: 1.2em;
+        text-align: center;
+      }
+
+      .btn:hover {
+        background-color: #3a3a3a;
+      }
+
+      .button-container {
+        margin: 50px auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .button-card {
+        background-color: #1e1e1e;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        padding: 20px;
+        max-width: 950px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 20px 20px;
+      }
+
+      .custom-card-container {
+        display: flex;
+        justify-content: center;
+        margin: 50px 20px;
+      }
+
+      .custom-card {
+        background-color: #1e1e1e;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        padding: 20px;
+        max-width: 950px; /* Make the max-width match the button-card */
+        width: 100%; /* Ensure it scales to fit the container */
+      }
+
+      .custom-card-content {
+        text-align: center;
+      }
+
+      .custom-card-content textarea {
+        display: block;
+        width: 264px;
+        height: 100px;
+        border: none;
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        font-family: "Lexend", Arial, sans-serif;
+        font-size: 1em;
+        margin: 20px auto 0;
+        resize: none;
+        overflow: auto;
+        text-align: center;
+      }
+
+      .custom-card-content h3 {
+        font-size: 4em;
+        margin: 0 0 10px;
+        color: #ffffff;
+        background: -webkit-linear-gradient(#ffffff, #8c8c8c);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .custom-card-content p {
+        font-size: 1.2em;
+        color: #e0e0e0;
+        line-height: 1.5;
+        margin: 0 0 15px;
+      }
+
+      .custom-card-content a {
+        font-size: 1.2em;
+        color: #84c5ff;
+        line-height: 1.5;
+        margin: 0 0 15px;
+      }
+
+      .custom-card-image {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .custom-card-image img {
+        width: 264px;
+        height: 93px;
+        object-fit: contain;
+        image-rendering: pixelated;
+      }
+
+      @media (max-width: 768px) {
+        .profile {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .profile-picture {
+          margin: 0 0 20px 0;
+          width: 100px;
+          height: 100px;
+        }
+
+        /*.logo {
+           width: 40px;
+          height: 8px;
+        }*/
+
+        .profile p {
+          font-size: 1em;
+        }
+
+        .card {
+          width: 90%;
+          margin: 10px;
+        }
+
+        .card-content h3 {
+          font-size: 1.5em;
+        }
+
+        .card-content p {
+          font-size: 1em;
+        }
+
+        .btn {
+          font-size: 1em;
+          padding: 10px 20px;
+        }
+        .circle-btn {
+          width: 50px;
+          height: 50px;
+          font-size: 1.2em;
+        }
+
+        @media (max-width: 480px) {
+          .profile {
+            padding: 10px;
+          }
+
+          .profile-picture {
+            width: 80px;
+            height: 80px;
+          }
+
+          /*.logo {
+          width: 30px;
+          height: 6px;
+        } */
+
+          .profile p {
+            font-size: 0.9em;
+          }
+
+          .card {
+            width: 100%;
+            margin: 10px 0;
+          }
+
+          .card-content h3 {
+            font-size: 1.4em;
+          }
+
+          .card-content p {
+            font-size: 0.9em;
+          }
+
+          .btn {
+            font-size: 0.9em;
+            padding: 8px 16px;
+          }
+        }
+        .circle-btn {
+          width: 40px;
+          height: 40px;
+          font-size: 1em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile-container">
+      <div class="profile">
+        <a href="images/pompom.png" target="_blank">
+          <img
+            class="profile-picture"
+            src="images/pompom.png"
+            alt="An image of the character Pompompurin."
+          />
+        </a>
+        <div class="profile-text">
+          <a href="images/coconut_small.png" target="_blank">
+            <img class="logo" src="images/coconut_small.png" alt="Logo" />
+          </a>
+          <p>hello internet</p>
         </div>
       </div>
     </div>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const discordLink = document.getElementById('discord-link');
-    
-      discordLink.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the link from navigating to another page
-    
-        // Text to copy to clipboard
-        const textToCopy = 'coconut.capybara';
-    
-        // Create a temporary input element
-        const tempInput = document.createElement('input');
-        tempInput.value = textToCopy;
-        document.body.appendChild(tempInput);
-    
-        // Select the text in the input
-        tempInput.select();
-        tempInput.setSelectionRange(0, 99999); // For mobile devices
-    
-        // Copy the text to clipboard
-        document.execCommand('copy');
-    
-        // Remove the temporary input
-        document.body.removeChild(tempInput);
-    
-        // Optionally, you can provide visual feedback or alert the user
-        alert('Copied my discord : ' + textToCopy);
-      });
-    });
-    </script>
-    
-</body>
+    <div class="button-container">
+      <div class="button-card">
+        <div class="profile-buttons">
+          <button class="circle-btn">
+            <i class="fa-brands fa-github"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/sheep.png" alt="Mountain view" />
+        <div class="card-content">
+          <h3>ChilloutVR</h3>
+          <p>This is all of my creations and screenshots from ChilloutVR!</p>
+          <a href="#" class="btn">Coming soon...</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/mountains.png" alt="Mountain view" />
+        <div class="card-content">
+          <!-- Future Content -->
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/mountains.png" alt="Mountain view" />
+        <div class="card-content">
+          <!-- Future Content -->
+        </div>
+      </div>
+    </div>
+    <div class="custom-card-container">
+      <div class="custom-card">
+        <div class="custom-card-content">
+          <h3>88x31</h3>
+          <a
+            href="https://indieweb.org/88x31"
+            target="_blank"
+            rel="noopener noreferrer"
+            >What's this?</a
+          >
+          <div class="custom-card-image">
+            <a href="images/88x31.png" target="_blank">
+              <img src="images/88x31.png" alt="88x31 button image" />
+            </a>
+          </div>
+          <textarea readonly="">
+<a href="https://toasted.fun/"><img src="https://toasted.fun/images/88x31.png"></a></textarea
+          >
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
